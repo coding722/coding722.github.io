@@ -1,0 +1,273 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333333;
+}
+
+header {
+    background-color: #0077c8;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header img {
+    margin: 0;
+    width: 100px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+main {
+    padding: 20px;
+}
+
+#blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.post {
+    flex-basis: calc(32.00% - 40px);
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px #cccccc;
+    border-radius: 10px;
+}
+
+.post h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+footer {
+    background-color: #0077c8;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+}
+
+#logo {
+    display: block;
+    margin: 0 auto;
+    width: 170px;
+    margin-left: center;
+}
+
+h1{
+    margin-left: 50%;
+}
+
+
+  * {
+    cursor: crosshair;
+}
+
+#color-switch{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    background-color: transparent;
+    border-color: transparent;
+}
+
+#play-button{
+    font-style: normal;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    background-color: transparent;
+    border-color: transparent;
+    color: black;
+}
+#prev-button{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    background-color: transparent;
+    border-color: transparent;
+    color: black;
+}
+#next-button{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    background-color: transparent;
+    border-color: transparent;
+    color: black;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  button {
+    background-color: #3498db;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Change the color of the button on hover */
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Style the menu items */
+  nav ul li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  /* Add a hover effect to the menu items */
+  nav ul li:hover {
+    color: #3498db;
+  }
+
+  #clock {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+::-webkit-scrollbar{
+    background: #e8f2ff;
+    width: 0;
+}
+    
+::-webkit-scrollbar-thumb{
+    background: #0043e8; 
+}
+
+.menu-item {
+    /* add styles for menu items */
+    animation: none;
+  }
+  
+  .menu-item.selected {
+    /* add styles for selected menu items */
+    animation: menu-item-animation 0.5s;
+  }
+  
+  @keyframes menu-item-animation {
+    /* add animation */
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+  }
+
+  #animated-h1 {
+    animation: h1-animation 2s;
+  }
+  
+  @keyframes h1-animation {
+    from {
+      transform: translateY(-1000%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+  .menu {
+    animation: menu-animation 2s;
+  }
+  
+  @keyframes menu-animation {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+  img{
+    animation: img-animation 2s;
+  }
+
+  @keyframes img-animation {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0%);
+    }
+  }
+
+  * {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ }
+
+ #greeting-box {
+    width: 200px;
+    padding: 20px;
+    background-color: #3498db; /* ChatGPT orange color */
+    color: #ffffff; /* white text */
+    text-align: center;
+    font-size: 1.5em;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* to center the element */
+    z-index: 1; /* to make sure it appears on top */
+    border-radius: 10px; /* to make the corners rounded */
+    box-shadow: 2px 2px 10px #000000; /* to add a shadow effect */
+  }
+
+  #volume {
+    -webkit-appearance: none;
+    appearance: none;
+    background: grey;
+    border-radius: 5px;
+  }
+  
+  #volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #fff;
+    cursor: pointer;
+  }
+  a{
+    text-decoration: none;
+  }
+  p{
+    text-decoration: none;
+    color: #000000;
+  }

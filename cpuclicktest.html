@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" type="image/x-icon" href="Tomko__icon_for_blog_with_midnight_theme_and_dog_on_it_and_name_e0aba03a-679d-415c-9536-ac5e4e9df3a4.ico">
+<head>
+  <title>Tic tac toe</title>
+  <style>
+       body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20;
+        background-color: #f5f5f5;
+        color: #333333;
+        max-height: 200px;
+        height: 200px;
+    }
+    header {
+    background-color: #0077c8;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #0077c8;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    padding: 35px;
+    position: absolute;
+    bottom: 0;
+    width: 96.35%; /* adjust as needed */
+    left: 0;
+}
+
+header h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header img {
+    margin: 0;
+    width: 150px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+#click-area {
+width: 100px;
+height: 100px;
+background-color: #f00;
+text-align: center;
+line-height: 100px;
+color: #fff;
+font-size: 20px;
+margin: 0 auto;
+margin-top: 5%;
+}
+
+#click-counter, #cps, #timer {
+text-align: center;
+font-size: 20px;
+margin: 10px 0;
+}
+
+#start-button, #restart-button {
+background-color: #0077c8;
+color: #fff;
+padding: 10px 20px;
+border: none;
+font-size: 20px;
+margin: 10px 0;
+cursor: pointer;
+position: absolute; /* Position the button absolute */
+}
+
+#start-button:hover, #restart-button:hover {
+background-color: #0055a6;
+}
+
+#restart-button {
+display: none;
+left: 46.75%; /* Center horizontally */
+top: 61%;
+}
+#start-button{
+top: 55%; /* Center vertically */
+left: 46.75%; /* Center horizontally */
+}
+
+.flex-center {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="obrazky/logo.png" alt="Logo" id="logo">
+    <h1 id="animated-h1">Click test</h1>
+    <nav>
+      <ul class="menu">
+          <li class="menu-item"><a href="blog.html">Home</a></li>
+      </ul>
+  </nav>
+  </header>
+  <main>
+    <div id="click-area"></div>
+    <div id="click-counter"></div>
+    <div id="cps"></div>
+    <div id="timer"></div>
+    <button id="restart-button" style="display:none" onclick="restartTest()">Restart Test</button>
+<script>
+  //global variables
+  let clickCounter = 0;
+  let cpsCounter = 0;
+  let intervalId;
+  let timer = 0;
+
+  //click event listener for click-area
+  document.getElementById("click-area").addEventListener("click", () => {
+    clickCounter++;
+    document.getElementById("click-counter").innerHTML = `Clicks: ${clickCounter}`;
+  });
+
+  //start test function
+  function startTest() {
+    document.getElementById("animated-h1").innerHTML = "Test in progress...";
+    document.getElementById("click-area").style.backgroundColor = "#0f0";
+    document.getElementById("restart-button").style.display = "none";
+
+    //start interval to count clicks per second
+    intervalId = setInterval(() => {
+      cpsCounter++;
+    }, 1000);
+
+    //start timer
+    let timerId = setInterval(() => {
+      timer++;
+      document.getElementById("timer").innerHTML = `Time: ${timer}s`;
+    }, 1000);
+
+    //stop test after 10 seconds
+    setTimeout(() => {
+      clearInterval(intervalId);
+      clearInterval(timerId);
+      document.getElementById("cps").innerHTML = `CPS: ${cpsCounter}`;
+      document.getElementById("animated-h1").innerHTML = "Test complete!";
+      document.getElementById("click-area").style.backgroundColor = "#f00";
+      document.getElementById("click-counter").style.display = "none";
+      document.getElementById("timer").style.display = "none";
+      document.getElementById("restart-button").style.display = "block";
+      start-button
+    }, 10000);
+  }
+
+  //restart test function
+  function restartTest() {
+    clickCounter = 0;
+    cpsCounter = 0;
+    timer = 0;
+    document.getElementById("click-counter").innerHTML = "Clicks: 0";
+    document.getElementById("cps").innerHTML = "Clicks per Second: 0";
+    document.getElementById("timer").innerHTML = "Time: 0s";
+    startTest();
+  }
+</script>
+<button id="start-button" onclick="startTest()">Start Test</button>
+  </main>
+  <footer>
+    <p>Copyright © 2020 Tomko</p>
+  </footer>
+</body>
+</html>

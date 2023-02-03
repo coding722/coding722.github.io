@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" type="image/x-icon" href="Tomko__icon_for_blog_with_midnight_theme_and_dog_on_it_and_name_e0aba03a-679d-415c-9536-ac5e4e9df3a4.ico">
+<head>
+  <title>Tetris</title>
+  <style>
+       body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20;
+        background-color: #f5f5f5;
+        color: #333333;
+        max-height: 200px;
+        height: 200px;
+    }
+    header {
+    background-color: #0077c8;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #0077c8;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    padding: 35px;
+    position: absolute;
+    bottom: 0;
+    width: 96.35%; /* adjust as needed */
+    left: 0;
+}
+
+header h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header img {
+    margin: 0;
+    width: 150px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 40px;
+  height: 25px;
+  border: 1px solid black;
+}
+#game-board {
+    margin-top: 5px;
+margin-left: 39.5%;
+  }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="obrazky/logo.png" alt="Logo" id="logo">
+    <h1 id="animated-h1">Tetris</h1>
+    <nav>
+      <ul class="menu">
+          <li class="menu-item"><a href="blog.html">Home</a></li>
+      </ul>
+  </nav>
+  </header>
+  <main>
+    <div id="game-board">
+        <!-- Add the game board here -->
+      </div>
+  </main>
+  <script>
+    const gameBoard = document.querySelector("#game-board");
+
+// Create the game board by adding divs
+for (let i = 0; i < 20; i++) {
+  const row = document.createElement("div");
+  row.classList.add("row");
+  for (let j = 0; j < 10; j++) {
+    const cell = document.createElement("div");
+    cell.classList.add("cell");
+    row.appendChild(cell);
+  }
+  gameBoard.appendChild(row);
+}
+
+const gameBoard = document.querySelector("#game-board");
+const gameRows = 20;
+const gameCols = 10;
+const gameArray = [];
+
+for (let i = 0; i < gameRows; i++) {
+  gameArray[i] = [];
+  for (let j = 0; j < gameCols; j++) {
+    gameArray[i][j] = 0;
+  }
+}
+
+const drawGameArray = () => {
+  let html = "";
+  for (let i = 0; i < gameRows; i++) {
+    html += "<tr>";
+    for (let j = 0; j < gameCols; j++) {
+      if (gameArray[i][j] === 0) {
+        html += "<td></td>";
+      } else {
+        html += `<td class="filled" style="background-color:${gameArray[i][j]}"></td>`;
+      }
+    }
+    html += "</tr>";
+  }
+  gameBoard.innerHTML = html;
+};
+
+const randomBlock = () => {
+  const blockTypes = [    [[1, 1], [1, 1]],
+    [[1, 1, 1, 1]],
+    [[1, 1, 1], [0, 0, 1]],
+    [[1, 1, 1], [1, 0, 0]],
+    [[0, 1, 1], [1, 1, 0]],
+    [[1, 1, 0], [0, 1, 1]],
+    [[0, 1, 0], [1, 1, 1]]
+  ];
+  const randomIndex = Math.floor(Math.random() * blockTypes.length);
+  const randomBlock = blockTypes[randomIndex];
+  return randomBlock;
+};
+
+let currentBlock = randomBlock();
+let currentX = 0;
+let currentY = 0;
+const blockColors = [  "red",  "blue",  "green",  "yellow",  "purple",  "orange",  "pink"];
+let currentColor = blockColors[Math.floor(Math.random() * blockColors.length)];
+
+const drawBlock = () => {
+  for (let i = 0; i < currentBlock.length; i++) {
+    for (let j = 0; j < currentBlock[i].length; j++) {
+      if (currentBlock[i][j] === 1) {
+        gameArray[currentY + i][currentX + j] = currentColor;
+      }
+    }
+  }
+  drawGameArray();
+};
+
+const moveBlockDown = () => {
+  if (canBlockMoveDown()) {
+    clearBlock();
+    currentY++;
+    drawBlock();
+  } else {
+    addBlockToPile();
+    clearFullRows();
+    currentBlock = randomBlock();
+    currentX = Math.floor(gameCols / 2 - currentBlock[0].length / 2);
+    currentY = 0;
+    currentColor = blockColors[Math.floor(Math.random() * blockColors.length)];
+    drawBlock();
+  }
+};
+
+// Add other logic for the Tetris game here
+  </script>
+  <footer>
+    <p>Copyright © 2023 All rights reserved.</p>
+  </footer>
+</body>
+</html>

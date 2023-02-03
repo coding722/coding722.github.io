@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" type="image/x-icon"
+    href="Tomko__icon_for_blog_with_midnight_theme_and_dog_on_it_and_name_e0aba03a-679d-415c-9536-ac5e4e9df3a4.ico">
+
+<head>
+    <title>Tic tac toe</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20;
+            background-color: #f5f5f5;
+            color: #333333;
+            max-height: 200px;
+            height: 200px;
+        }
+
+        header {
+            background-color: #0077c8;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer {
+            background-color: #0077c8;
+            padding: 20px;
+            text-align: center;
+            color: #ffffff;
+            padding: 35px;
+            position: absolute;
+            bottom: 0;
+            width: 96.35%;
+            /* adjust as needed */
+            left: 0;
+        }
+
+        header h1 {
+            margin: 0;
+            color: #ffffff;
+            font-size: 36px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        header img {
+            margin: 0;
+            width: 150px;
+            height: auto;
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 18px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        label {
+            margin-top: 10px;
+        }
+
+        input[type="number"] {
+            padding: 10px;
+            font-size: 18px;
+            width: 200px;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            margin-top: 20px;
+            background-color: #0077c8;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #result {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        #bmiValue {
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        #bmiMessage {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="obrazky/logo.png" alt="Logo" id="logo">
+        <h1 id="animated-h1">BMI CALCULATOR</h1>
+        <nav>
+            <ul class="menu">
+                <li class="menu-item"><a href="blog.html">Home</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form>
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" name="weight" required>
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" name="height" required>
+            <button type="button" id="calculateBtn">Calculate BMI</button>
+        </form>
+        <div id="result">
+            <p id="bmiValue"></p>
+            <p id="bmiMessage"></p>
+        </div>
+    </main>
+    <script>
+        // Get references to the form elements
+        const weightInput = document.querySelector("#weight");
+        const heightInput = document.querySelector("#height");
+        const calculateBtn = document.querySelector("#calculateBtn");
+        const bmiValue = document.querySelector("#bmiValue");
+        const bmiMessage = document.querySelector("#bmiMessage");
+      
+        // Add event listener to the calculate button
+        calculateBtn.addEventListener("click", function() {
+          // Check if the inputs are not empty
+          if (!weightInput.value || !heightInput.value) {
+            bmiValue.textContent = "Please enter both weight and height.";
+            bmiMessage.textContent = "";
+            return;
+          }
+      
+          // Calculate the BMI
+          const weight = parseFloat(weightInput.value);
+          const height = parseFloat(heightInput.value);
+          const bmi = weight / (height / 100 * height / 100);
+      
+          // Show the result
+          bmiValue.textContent = "Your BMI is " + bmi.toFixed(2);
+      
+          // Show the message based on the BMI
+          if (bmi < 18.5) {
+            bmiMessage.textContent = "Underweight";
+          } else if (bmi >= 18.5 && bmi <= 24.9) {
+            bmiMessage.textContent = "Normal weight";
+          } else if (bmi >= 25 && bmi <= 29.9) {
+            bmiMessage.textContent = "Overweight";
+          } else if (bmi >= 30) {
+            bmiMessage.textContent = "Obesity";
+          }
+        });
+      </script>
+    <footer>
+        <p>Copyright © 2023 All rights reserved.</p>
+    </footer>
+</body>
+</html>

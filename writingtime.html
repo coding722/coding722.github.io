@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" type="image/x-icon" href="Tomko__icon_for_blog_with_midnight_theme_and_dog_on_it_and_name_e0aba03a-679d-415c-9536-ac5e4e9df3a4.ico">
+<head>
+  <title>Typing speed test</title>
+  <style>
+       body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20;
+        background-color: #f5f5f5;
+        color: #333333;
+        max-height: 200px;
+        height: 200px;
+    }
+    header {
+    background-color: #0077c8;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #0077c8;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    padding: 35px;
+    position: absolute;
+    bottom: 0;
+    width: 96.35%; /* adjust as needed */
+    left: 0;
+}
+
+header h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header img {
+    margin: 0;
+    width: 150px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+#test-area {
+    width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+#test-text {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+#typing-area {
+    width: 98.85%;
+    height: 50px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    padding: 10px;
+}
+#start-button {
+    background-color: #0077c8; /* Green background */
+    border: none; /* Remove border */
+    color: white; /* White text */
+    padding: 15px 32px; /* Add some padding */
+    text-align: center; /* Center the text */
+    text-decoration: none; /* Remove underline */
+    display: inline-block; /* Make the button inline */
+    font-size: 16px; /* Increase font size */
+    margin: 4px 2px; /* Add some margin */
+    cursor: pointer; /* Add cursor pointer */
+    border-radius: 10px; /* Add rounded corners */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Add a drop shadow */
+
+}
+#start-button, #new-sentence-button{
+        display: block;
+        margin: 0 auto;
+    }
+    #timer, #wpm, #test-text, #start-button #new-sentence-button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#typingArea{
+    text-align: center;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="obrazky/logo.png" alt="Logo" id="logo">
+    <h1 id="animated-h1">Typing speed test</h1>
+    <nav>
+      <ul class="menu">
+          <li class="menu-item"><a href="blog.html">Home</a></li>
+      </ul>
+  </nav>
+  </header>
+  <main>
+    <p id="test-text">The quick brown fox jumps over the lazy dog</p>
+    <textarea id="typing-area" style="display: flex; align-items: center; justify-content: center;" disabled></textarea>
+    <button id="start-button">Start</button>
+    <br>
+    <button id="new-sentence-button">New Sentence</button>
+    <p id="timer">Time: 0s</p>
+    <p id="wpm">WPM: 0</p>
+  </main>
+  <script>
+    var testText;
+    var typingArea = document.getElementById("typing-area");
+    var startButton = document.getElementById("start-button");
+    var newSentenceButton = document.getElementById("new-sentence-button");
+    var timer = document.getElementById("timer");
+    var wpm = document.getElementById("wpm");
+
+    var startTime;
+    var endTime;
+
+    startButton.addEventListener("click", function() {
+        // Generate a random sentence
+        var sentences = ["The quick brown fox jumps over the lazy dog.", "Lorem ipsum dolor sit amet.", "Hello, world!", "I am a computer program.", "The sky is blue.", "Today is a good day.", "This is a typing test game.", "I am learning new things.", "The sun is shining brightly.", "Please give me a task to complete.", "I am here to help you.", "This is an example sentence.", "Let's play a game together.", "I can understand natural language.", "The world is a beautiful place.", "Life is a journey to be enjoyed.", "I am getting better every day.", "Do not give up on your dreams.", "Believe in yourself and your abilities.", "I am here to support you.", "Let's make the most of this day.", "Positive thinking leads to positive results."];        var randomIndex = Math.floor(Math.random() * sentences.length);
+        testText = sentences[randomIndex];
+
+        // Update the text to be typed
+        document.getElementById("test-text").innerHTML = testText;
+
+        // Start the timer
+        startTime = new Date();
+        timer.innerHTML = "Time: 0s";
+
+        // Disable the start button
+        startButton.setAttribute("disabled", "disabled");
+
+        // Enable the typing area
+        typingArea.removeAttribute("disabled");
+        typingArea.focus();
+
+        // Check if the text has been fully typed
+        typingArea.addEventListener("keyup", function() {
+            if (typingArea.value === testText) {
+                // Stop the timer
+                endTime = new Date();
+                var timeTaken = (endTime - startTime) / 1000;
+                timer.innerHTML = "Time: " + timeTaken + "s";
+
+                // Calculate the words per minute (WPM)
+                var words = testText.split(" ").length;
+                var wpmValue = Math.round(words / timeTaken * 60);
+                wpm.innerHTML = "WPM: " + wpmValue;
+
+                // Disable the typing area
+                typingArea.setAttribute("disabled", "disabled");
+            }
+        });
+    });
+
+    newSentenceButton.addEventListener("click", function() {
+        // Generate a new random sentence
+        var sentences = ["The quick brown fox jumps over the lazy dog.", "Lorem ipsum dolor sit amet.", "Hello, world!", "I am a computer program.", "The sky is blue.", "Today is a good day.", "This is a typing test game.", "I am learning new things.", "The sun is shining brightly.", "Please give me a task to complete.", "I am here to help you.", "This is an example sentence.", "Let's play a game together.", "I can understand natural language.", "The world is a beautiful place.", "Life is a journey to be enjoyed.", "I am getting better every day.", "Do not give up on your dreams.", "Believe in yourself and your abilities.", "I am here to support you.", "Let's make the most of this day.", "Positive thinking leads to positive results."];        var randomIndex = Math.floor(Math.random() * sentences.length);
+        var randomIndex = Math.floor(Math.random() * sentences.length);
+        testText = sentences[randomIndex];
+
+        // Update the text to be typed
+        document.getElementById("test-text").innerHTML = testText;
+
+        // Clear the typing area
+        typingArea.value = "";
+
+        // Enable the typing area
+        typingArea.removeAttribute("disabled");
+        typingArea.focus();
+
+        // Reset the timer and WPM
+        timer.innerHTML = "Time: 0s";
+        wpm.innerHTML = "WPM: 0";
+    });
+</script>
+  <footer>
+    <p>Copyright © 2023 All rights reserved.</p>
+  </footer>
+</body>
+</html>

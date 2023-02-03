@@ -1,0 +1,19 @@
+Tic-tac-toe game: A simple game where players take turns marking a grid of 3x3 squares, trying to make a row, column, or diagonal of their mark.
+
+Memory match game: A game where players have to match pairs of cards, revealing them two at a time, with the goal of matching all the cards in as few moves as possible.
+
+Snake game: A game where players control a snake that moves around the screen, collecting food while avoiding obstacles and its own tail.
+
+Hangman game: A game where players have to guess a word or phrase by suggesting letters, with the goal of guessing the word before the man is "hanged."
+
+Maze game: A game where players have to navigate through a maze to reach a goal, avoiding obstacles and enemies along the way.
+
+Space Invaders: A game where players control a spaceship and must destroy waves of alien invaders.
+
+Breakout: A game where players control a paddle to hit a ball and break bricks.
+
+Flappy Bird: A game where players control a bird and must navigate through pipes.
+
+Minesweeper: A game where players must uncover all the cells on the board that do not contain mines.
+
+Tower defense: A game where players must defend their base from waves of enemies by building and upgrading towers.

@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/blog.css">
+    <link rel="icon" type="image/x-icon"
+        href="Tomko__icon_for_blog_with_midnight_theme_and_dog_on_it_and_name_e0aba03a-679d-415c-9536-ac5e4e9df3a4.ico">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <title>Blogísek</title>
+</head>
+<style>
+    footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+</style>
+
+<body>
+    <header>
+        <img src="obrazky/logo.png" alt="Logo" id="logo">
+        <h1 id="animated-h1">About</h1>
+        <nav>
+            <ul class="menu">
+                <li class="menu-item"><a href="blog.html">Home</a></li>
+                <li class="menu-item"><a href="about.html">About</a></li>
+                <li class="menu-item"><a href="other.html">Other</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="greeting-box"></div>
+        <h2>Why i made this blog</h2>
+        <div class="post">
+            <p>As a passionate individual in the field of technology, I have always been fascinated with the power of
+                the internet to connect people and share information. With the rise of social media and other online
+                platforms, I saw an opportunity to create a space where I could share my thoughts and experiences on the
+                latest tech trends and innovations.</p>
+            <p>This is why I decided to start my own blog. I wanted to create a platform where people could come to
+                learn about the latest advancements in technology and how they can be applied in their own lives. I also
+                wanted to provide a space where people could ask questions and engage in discussions about different
+                topics.</p>
+            <p>My blog is not just about technology, it's also about sharing my own personal experiences and insights. I
+                believe that by sharing my own story, I can help others to see the potential of technology and how it
+                can be used to improve their own lives.</p>
+            <p>I hope that my blog will become a valuable resource for anyone who is interested in technology and its
+                impact on our world. Thank you for taking the time to visit my blog and I look forward to sharing my
+                thoughts and experiences with you in the future.
+            (The website has been created 27.01.2023)</p>
+        </div>
+        <div id="blog-posts">
+        </div>
+    </main>
+    <button id="color-switch" style="position: absolute; top: 0; left: 0;">Změn barvu pozadí</button>
+    <audio id="bg-music"></audio>
+    <div class="button-container" style="margin-top: 180px;">
+        <button id="prev-button">Previous</button>
+        <b>~</b>
+        <button id="play-button">Play</button>
+        <b>~</b>
+        <button id="next-button">Next</button>
+        <input type="range" id="volume" min="0" max="1" step="0.05" value="0.25">
+    </div>
+    <div id="clock"></div>
+    <div id="cursor-animation"></div>
+    <footer>
+        <p>Copyright © 2023 All rights reserved.</p>
+    </footer>
+    <script src="js/blog.js"></script>
+</body>
+
+</html>

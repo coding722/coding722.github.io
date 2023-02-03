@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<link rel="icon" type="image/x-icon" href="Tomko__icon_for_blog_with_midnight_theme_and_dog_on_it_and_name_e0aba03a-679d-415c-9536-ac5e4e9df3a4.ico">
+<head>
+  <title>Weather</title>
+  <style>
+       body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20;
+        background-color: #f5f5f5;
+        color: #333333;
+        max-height: 200px;
+        height: 200px;
+    }
+    header {
+    background-color: #0077c8;
+    padding: 20px;
+    text-align: center;
+}
+
+footer {
+    background-color: #0077c8;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    padding: 35px;
+    position: absolute;
+    bottom: 0;
+    width: 96.35%; /* adjust as needed */
+    left: 0;
+}
+
+header h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header img {
+    margin: 0;
+    width: 150px;
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+nav li {
+    margin-right: 20px;
+}
+
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+body {
+  background-color: #f2f2f2;
+  font-family: sans-serif;
+}
+
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  text-align: center;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  width: 80%;
+  margin-bottom: 20px;
+}
+
+button[type="submit"] {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #0077c8;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#weather-info {
+  margin-top: 50px;
+  font-size: 18px;
+}
+
+#city-name, #temperature, #description {
+  margin-top: 10px;
+}
+#get-weather {
+  position: relative;
+}
+
+.confetti {
+  position: absolute;
+  background-color: #f00;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  transform: rotate(45deg);
+}
+input[type="text"] {
+  text-align: center;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="obrazky/logo.png" alt="Logo" id="logo">
+    <h1 id="animated-h1">Weather</h1>
+    <nav>
+      <ul class="menu">
+          <li class="menu-item"><a href="blog.html">Home</a></li>
+      </ul>
+  </nav>
+  </header>
+  <main>
+    <div class="container">
+        <form>
+          <input type="text" id="city" placeholder="Enter a city name...">
+          <button type="submit" id="submit-btn">Get Weather</button>
+        </form>
+        <div id="weather-info">
+          <p id="city-name"></p>
+          <p id="temperature"></p>
+          <p id="description"></p>
+        </div>
+      </div>
+  </main>
+  <script>
+    const cityInput = document.querySelector("#city");
+    const submitBtn = document.querySelector("#submit-btn");
+    const cityName = document.querySelector("#city-name");
+    const temperature = document.querySelector("#temperature");
+    const description = document.querySelector("#description");
+  
+    submitBtn.addEventListener("click", async function(event) {
+      event.preventDefault();
+  
+      const city = cityInput.value;
+      const apiKey = "050313f0eef618157a0a1a5602b72cad";
+  
+      try {
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
+        const data = await response.json();
+  
+        cityName.textContent = data.name;
+        temperature.textContent = `Temperature: ${(data.main.temp - 273.15).toFixed(2)} °C`;
+        description.textContent = `Status: ${data.weather[0].description}`;
+  
+      } catch (error) {
+        alert("Invalid city name or API key. Please try again.");
+        cityInput.value = "";
+      }
+    });
+  </script>
+  <footer>
+    <p>Copyright © 2023 All rights reserved.</p>
+  </footer>
+</body>
+</html>

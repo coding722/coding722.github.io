@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="Tomko__icon_for_blog_with_midnight_theme_and_dog_on_it_and_name_e0aba03a-679d-415c-9536-ac5e4e9df3a4.ico"> 
+<head>
+  <title>Password Generator</title>
+  <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20;
+        background-color: #f5f5f5;
+        color: #333333;
+        max-height: 200px;
+        height: 200px;
+    }
+
+    form {
+    width: 30%; /* or any other fixed width */
+    margin: 0 auto; /* shorthand for setting top and bottom margins to 0 and left and right margins to auto */
+    }
+
+
+    label {
+        margin-right: 10px;
+        font-size: 18px;
+    }
+
+    input[type="number"] {
+        padding: 10px;
+        border-radius: 5px;
+        border: none;
+        margin-right: 10px;
+    }
+
+    button {
+        background-color: #3498db;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 5px;
+        border: none;
+        font-size: 18px;
+        cursor: pointer;
+    }
+
+    #password {
+        font-size: 24px;
+        font-weight: bold;
+        height: 20px; /* or any other fixed height */
+        max-height: 20px;
+        overflow-y: scroll; /* allows scrolling if the generated passwords exceed the set height */
+    }
+
+header {
+    background-color: #0077c8;
+    padding: 20px;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    color: #ffffff;
+    font-size: 36px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+header img {
+    margin: 0;
+    width: 100px;
+    height: auto;
+}
+footer {
+    background-color: #0077c8;
+    padding: 20px;
+    text-align: center;
+    color: #ffffff;
+    padding: 35px;
+    position: absolute;
+    bottom: 0;
+    width: 96.35%; /* adjust as needed */
+    left: 0;
+}
+p {
+  width: 30%; /* or any other fixed width */
+  margin: 0 auto; /* shorthand for setting top and bottom margins to 0 and left and right margins to auto */
+  font-size: 18px;
+}
+#password {
+    text-align: center;
+}
+#blog-posts {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.post {
+    flex-basis: calc(32.00% - 40px);
+    margin: 98.5px;
+    padding: 100px;
+    box-shadow: 0px 0px 10px transparent;
+    border-radius: 10px;
+}
+
+.post h3 {
+    margin: 0;
+    font-size: 24px;
+}
+  </style>
+</head>
+<body>
+  <header>
+    <img src="obrazky/logo.png" alt="Logo" id="logo">
+    <h1 id="animated-h1">Password Generator</h1>
+    <nav>
+      <ul class="menu">
+          <li class="menu-item"><a href="">Home</a></li>
+      </ul>
+  </nav>
+  </header>
+  <main>
+    <form>
+      <label for="length">Password Length:</label>
+      <input type="number" id="length" name="length" min="8" max="64" value="8">
+      <br>
+      <label for="quantity">Number of Passwords to Generate:</label>
+      <input type="number" id="quantity" name="quantity" min="1" max="10" value="1">
+      <button type="button" onclick="generatePasswords()">Generate Passwords</button>
+    </form>
+    <div id="passwords"></div>
+    <div id="blog-posts">
+      <div class="post">
+          <h3></h3>
+          <ul></ul>
+      </div>
+  </div>
+  </main>
+  <script>
+    function generatePasswords() {
+      var length = document.getElementById("length").value;
+      var quantity = document.getElementById("quantity").value;
+      var passwords = ""; // added variable to store all the passwords
+      for (var i = 0; i < quantity; i++) {
+        var password = generatePassword(length); // changed variable name to avoid confusion
+        passwords += "<p>Password " + (i + 1) + ": " + password + "</p>";
+      }
+      document.getElementById("passwords").innerHTML = passwords;
+    }
+  
+    function generatePassword(length) {
+      var password = "";
+      var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()_+";
+  
+      for (var i = 0; i < length; i++) {
+          password += possible.charAt(Math.floor(Math.random() * possible.length));
+      }
+      return password;
+    }
+  </script>
+  <footer>
+    <p>Copyright © 2023 All rights reserved.</p>
+  </footer>
+</body>
+</html>
