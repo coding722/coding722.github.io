@@ -16,20 +16,8 @@ for (let i = 0; i < links.length; i++) {
   });
 }
 
-window.addEventListener('pageshow', function(event) {
-  if (event.persisted) {
-    document.body.classList.remove('fade-out');
-  }
-});
-
-// Get the current URL without the base URL and the query string
-const currentPath = window.location.pathname.substring(1);
-
-// Check if the URL ends with .html
-if (currentPath.endsWith('.html')) {
-  // Replace the .html extension with a trailing slash
-  const newPath = currentPath.replace(/\.html$/, '') + '/';
-
-  // Use the History API to change the URL without a page refresh
-  window.history.replaceState(null, null, newPath);
+// Remove .html extension from URL if present
+if (window.location.href.indexOf(".html") > -1) {
+  var newUrl = window.location.href.replace(".html", "");
+  window.history.replaceState(null, null, newUrl);
 }
