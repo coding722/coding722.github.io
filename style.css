@@ -1,10 +1,17 @@
 html {
     cursor: url('https://cur.cursors-4u.net/cursors/cur-11/cur1020.png'), auto;
     background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-    background-size: cover;
+    background-size: cover; 
+    background-repeat: no-repeat;
     overflow: hidden;
 }
 
+body {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
 
 h1 {
     font-size: 7rem;
@@ -131,29 +138,63 @@ h1 {
 /* styles for mobile devices */
 @media screen and (max-width: 480px) {
     html {
-      font-size: 16px;
+        font-size: 16px;
     }
-  
+
     h1 {
-      font-size: 4rem;
+        font-size: 4rem;
     }
-  
+
     .menu {
-      flex-direction: row;
-      margin-top: 20px;
+        flex-direction: row;
+        margin-top: 20px;
     }
-  
+
     .menu li {
-      margin: 0 10px;
+        margin: 0 10px;
     }
-  
+
     .menu li a {
-      padding: 10px 20px;
+        padding: 10px 20px;
     }
-  
+
     #playButton {
-      font-size: 14px;
-      padding: 8px 16px;
-      bottom: 10px;
+        font-size: 14px;
+        padding: 8px 16px;
+        bottom: 10px;
     }
-  }
+}
+
+#volumeSlider {
+    position: fixed;
+    bottom: 20px;
+    right: 750px;
+    width: 150px;
+    height: 40px;
+    background-color: #ddd;
+    border-radius: 5px;
+    outline: none;
+    opacity: 1;
+    transition: opacity 0.2s;
+}
+
+#volumeSlider::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#volumeSlider::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+#volumeSlider:hover {
+    opacity: 1;
+}
