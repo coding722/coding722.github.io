@@ -108,3 +108,22 @@ h1 {
         margin: 0 20px;
     }
 }
+
+#playButton {
+    background-color: #009688;
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 12px 24px;
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+  }
+  
+  #playButton:hover {
+    background-color: #00796b;
+  }
