@@ -122,8 +122,38 @@ h1 {
     left: 50%;
     transform: translateX(-50%);
     z-index: 9999;
-  }
-  
-  #playButton:hover {
+}
+
+#playButton:hover {
     background-color: #00796b;
+}
+
+/* styles for mobile devices */
+@media screen and (max-width: 480px) {
+    html {
+      font-size: 16px;
+    }
+  
+    h1 {
+      font-size: 4rem;
+    }
+  
+    .menu {
+      flex-direction: row;
+      margin-top: 20px;
+    }
+  
+    .menu li {
+      margin: 0 10px;
+    }
+  
+    .menu li a {
+      padding: 10px 20px;
+    }
+  
+    #playButton {
+      font-size: 14px;
+      padding: 8px 16px;
+      bottom: 10px;
+    }
   }
