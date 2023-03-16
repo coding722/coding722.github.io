@@ -1,0 +1,167 @@
+html{
+    cursor: url('obr/spo719.cur'), auto;
+
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #f9f9f9;
+    background-image: url('obr/ee.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: #f9f9f9;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #222;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+img{
+    max-width: 250px;
+    max-height: 250px;
+    min-height: 250px;
+    min-width: 250px;
+}
+
+.items {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: #fff;
+    background-color: #333;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .item {
+    margin-right: 20px;
+  }
+  
+  .item:last-child {
+    margin-right: 0;
+  }
+  
+  .item a {
+    color: #fff;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    padding: 10px;
+  }
+  
+  .item a:hover {
+    background-color: #fff;
+    color: #333;
+    border-radius: 5px;
+  }
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+
+.info {
+    padding: 40px;
+    background-color: #222;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto 0;
+    border-radius: 5px;
+    text-align: center;
+    height: 480px;
+}
+
+.feature {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #444;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.feature-icon {
+    font-size: 40px;
+    color: #f9f9f9;
+}
+
+.feature p {
+    font-size: 18px;
+    color: #f9f9f9;
+    margin: 0;
+}
+
+.footer {
+    padding: 40px;
+    background-color: #222;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 20px auto 0;
+    border-radius: 5px;
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+  }
+  
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+.nazevstr {
+    margin-left: 20px;
+    color: #f9f9f9;
+    font-size: 40px;
+    font-family: 'Pacifico', cursive;
+}
+
+.logo-nazevstr {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 150px;
+    height: 150px;
+    background-image: url('obr/logo.jpg');
+    background-size: cover;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 40px;
+    color: #f9f9f9;
+}
