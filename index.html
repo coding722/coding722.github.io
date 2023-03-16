@@ -7,8 +7,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menu</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://www.youtube.com/player_api"></script>
 </head>
 <body>
+    <audio autoplay>
+        <source src="https://www.youtube.com/embed/vtiwJc-5-aI?autoplay=1&mute=1" type="audio/mp3">
+        <source src="https://www.youtube.com/embed/5yUZUbGCUAE?autoplay=1&mute=1" type="audio/mp3">
+        <source src="https://www.youtube.com/embed/x_OwcYTNbHs?autoplay=1&mute=1" type="audio/mp3">
+        <!-- Add more <source> tags for each song -->
+      </audio>
+      
+      <script>
+        const songs = [
+          'https://www.youtube.com/embed/tcHJodG5hX8?autoplay=1&mute=1',
+          'https://www.youtube.com/embed/5yUZUbGCUAE?autoplay=1&mute=1',
+          'https://www.youtube.com/embed/x_OwcYTNbHs?autoplay=1&mute=1',
+          'https://www.youtube.com/embed/bM7SZ5SBzyY?autoplay=1&mute=1',
+          'https://www.youtube.com/embed/S19UcWdOA-I?autoplay=1&mute=1',
+          'https://www.youtube.com/embed/wJnBTPUQS5A?autoplay=1&mute=1',
+          'https://www.youtube.com/embed/w9mankXvCn8?autoplay=1&mute=1',
+          'https://www.youtube.com/embed/QglaLzo_aPk?autoplay=1&mute=1',
+          'https://www.youtube.com/embed/K4DyBUG242c?autoplay=1&mute=1',
+          'https://www.youtube.com/embed/KGZzDxB4lYM?autoplay=1&mute=1'
+          // Add more song URLs as needed
+        ];
+        
+        const randomSong = songs[Math.floor(Math.random() * songs.length)];
+        
+        const audio = document.querySelector('audio');
+        const source = document.createElement('source');
+        source.setAttribute('src', randomSong);
+        source.setAttribute('type', 'audio/mp3');
+        audio.appendChild(source);
+      </script>
     <h1>Menu</h1>
     <div class="menu-container">
         <ul class="menu">
