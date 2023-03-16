@@ -8,6 +8,17 @@
     <link rel="shortcut icon" type="image/x-icon" href="obr/chess.png">
     <link rel="stylesheet" href="style.css">
     <title>O nás</title>
+    <script>
+        document.addEventListener('keydown', function (e) {
+            if (e.keyCode == 123 || (e.ctrlKey && e.shiftKey && e.keyCode == 73) || (e.ctrlKey && e.shiftKey && e.keyCode == 74)) {
+                e.preventDefault();
+            }
+        });
+
+        document.addEventListener('contextmenu', function (e) {
+            e.preventDefault();
+        });
+    </script>
 </head>
 <div class="header">
     <div class="logo-nazevstr">
@@ -42,6 +53,7 @@
 <div class="footer">
     <p style="font-weight: bold; font-size: 20px;">Made by Tomko &#x2764; | &copy; 2023</p>
 </div>
+<script src="script.js"></script>
 </body>
 
 </html>
