@@ -1,9 +1,9 @@
 html {
     cursor: url('https://cur.cursors-4u.net/cursors/cur-11/cur1020.png'), auto;
     background-image: url('https://images.unsplash.com/photo-1519681393784-d120267933ba?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
-    background-size: cover; 
-    background-repeat: no-repeat;
-    overflow: hidden;
+    background-size: cover;
+    background-position: center center;
+    background-attachment: fixed;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-  }
+}
 
 h1 {
     font-size: 7rem;
