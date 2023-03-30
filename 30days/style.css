@@ -1,0 +1,467 @@
+html{
+    width: 100%;
+    max-width: 100%;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+    margin-top: 80px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: bold;
+    margin-left: 10px;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #2c7aff;
+}
+
+/* Header Styles */
+
+header {
+    background-color: #fff;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.logo {
+    margin-right: auto;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #2c7aff;
+}
+
+nav {
+    margin-left: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin: 0 10px;
+}
+
+nav a {
+    font-size: 18px;
+    color: #333;
+}
+
+nav a:hover {
+    color: #2c7aff;
+}
+
+/* Main Styles */
+
+main {
+    margin-top: 80px;
+}
+
+.intro {
+    background-color: #2c7aff;
+    color: #fff;
+    text-align: center;
+    padding: 100px 0;
+}
+
+.intro h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #2c7aff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #2c7aff;
+    color: #fff;
+}
+
+.challenges {
+    background-color: #fff;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.challenges h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.challenges ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+}
+
+.challenges li {
+    margin: 20px;
+}
+
+.challenges a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #2c7aff;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.challenges a:hover {
+    background-color: #fff;
+    color: #2c7aff;
+}
+
+.about {
+    background-color: #f2f2f2;
+    text-align: center;
+    padding: 80px 0;
+}
+
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.about p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+/*TIPS-TRICKS*/
+/* Tips and Tricks section */
+.tips-tricks {
+    padding: 50px 0;
+    background-color: #f2f2f2;
+  }
+  
+  .tips-tricks h2 {
+    font-size: 32px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .tips-tricks ul {
+    max-width: 800px;
+    margin: 0 auto;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .tips-tricks li {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .tips-tricks li:before {
+    content: "\2022";
+    font-size: 25px;
+    color: #4d4d4d;
+    display: inline-block;
+    width: 1em;
+    margin-left: -1em;
+  }
+  
+  .tips-tricks p {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-top: 30px;
+    text-align: center;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .tips-tricks h2 {
+      font-size: 28px;
+    }
+  
+    .tips-tricks li {
+      font-size: 18px;
+    }
+  
+    .tips-tricks p {
+      font-size: 16px;
+    }
+  }
+  
+
+
+/*Benefits Styles*/
+.benefits {
+    background-color: #f9f9f9;
+    padding: 50px 0;
+  }
+  
+  .benefits h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+  }
+  
+  .benefits p {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-bottom: 30px;
+    color: #666;
+  }
+  
+  .benefits ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .benefits li {
+    width: 33%;
+    text-align: center;
+    padding: 30px;
+    box-sizing: border-box;
+  }
+  
+  .benefits li i {
+    font-size: 3rem;
+    color: #3498db;
+    margin-bottom: 10px;
+    display: block;
+  }
+  
+  .benefits li h3 {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .benefits li p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #666;
+  }
+  
+
+/* Footer Styles */
+
+footer {
+    background-color: #2c7aff;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.social-icons li {
+    margin: 0 10px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: #2c7aff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 30px;
+    transition: all 0.3s ease;
+}
+
+.social-icons a:hover {
+    background-color: #2c7aff;
+    color: #fff;
+}
+
+/* Exclusive Menu Styles */
+
+.exclusive-menu {
+    position: fixed;
+    top: 80px;
+    right: 0;
+    width: 250px;
+    height: 100%;
+    background-color: #2c7aff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: all 0.3s ease;
+}
+
+.exclusive-menu.active {
+    transform: translateX(0%);
+}
+
+.exclusive-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exclusive-menu li {
+    margin-bottom: 20px;
+}
+
+.exclusive-menu a {
+    display: block;
+    padding: 10px 20px;
+    color: #fff;
+    font-size: 18px;
+    transition: all 0.3s ease;
+}
+
+.exclusive-menu a:hover {
+    background-color: #fff;
+    color: #2c7aff;
+}
+
+.menu-toggle {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    header {
+        height: auto;
+    }
+
+    .logo h1 {
+        font-size: 18px;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block;
+        font-size: 24px;
+        color: #2c7aff;
+        margin-right: 20px;
+        cursor: pointer;
+    }
+
+    .exclusive-menu {
+        height: calc(100% - 80px);
+        top: 80px;
+    }
+
+    main {
+        margin-top: 0;
+    }
+}
+
+/*SCROLL*/
+
+/* hide default scrollbar */
+::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* add custom scrollbar style */
+  .scrollbar {
+    overflow-y: scroll;
+    height: 100vh;
+    padding-right: 20px; /* add a little padding to prevent content from overlapping scrollbar */
+  }
+  
+  /* scrollbar track */
+  .scrollbar::-webkit-scrollbar-track {
+    background-color: #f2f2f2;
+  }
+  
+  /* scrollbar thumb */
+  .scrollbar::-webkit-scrollbar-thumb {
+    background-color: #2c7aff;
+    border-radius: 10px;
+  }
+  
+  /* add smooth scroll transition */
+  .scroll-link {
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .scroll-link:hover {
+    color: #2c7aff;
+  }
+  
+  /* add anchor link offset for fixed header */
+  :target:before {
+    content:"";
+    display:block;
+    height:80px; /* fixed header height */
+    margin:-80px 0 0; /* negative fixed header height */
+  }
+  ul li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    list-style-type: none;
+  }
