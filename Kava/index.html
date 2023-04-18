@@ -10,7 +10,70 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
   <i class="fas fa-mug-hot"></i>
-  <link rel="stylesheet" href="style.css">
+  <style>
+    html {
+      max-width: 100%;
+    }
+
+    body::-webkit-scrollbar {
+      display: none;
+    }
+
+    body {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      background-image: url('sources/bgggg.jpg');
+      background-size: cover;
+      background-position: center;
+      background-color: hsla(0, 0%, 0%, 0.6)
+    }
+
+    .featurette-heading {
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    .lead {
+      color: #fff;
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    }
+
+    .featurette-image {
+      position: relative;
+    }
+
+    .featurette-image:before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .map-container {
+      overflow: hidden;
+      padding-bottom: 56.25%;
+      position: relative;
+      height: 0;
+    }
+
+    .map-container iframe {
+      left: 25%;
+      top: 10%;
+      height: 75%;
+      width: 75%;
+      position: absolute;
+    }
+  </style>
+  <script>
+    // Remove .html extension from URL if present
+    if (window.location.href.indexOf(".html") > -1) {
+      var newUrl = window.location.href.replace(".html", "");
+      window.history.replaceState(null, null, newUrl);
+    }
+  </script>
 </head>
 
 <body>
@@ -21,7 +84,8 @@
         <a class="navbar-brand" href="#">
           <img src="sources/cup-hot-fill.svg" width="30" height="30" alt="">
         </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
@@ -36,7 +100,7 @@
               <a class="nav-link" href="kontakt.html">Kontakt</a>
             </li>
           </ul>
-        </div>        
+        </div>
       </div>
     </nav>
   </header>
@@ -77,7 +141,8 @@
     <div class="row featurette">
       <div class="col-md-7">
         <h2 class="featurette-heading fw-normal lh-1" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">Cappuccino
-          <span class="text-body-secondary">Patří mezi nejoblíběnější.</span></h2>
+          <span class="text-body-secondary">Patří mezi nejoblíběnější.</span>
+        </h2>
         <p class="lead"
           style="background-color: hsla(0, 0%, 0%, 0.5); padding: 20px; font-size: 1.2rem; line-height: 1.6; text-align: justify;">
           Cappuccino je kávový nápoj pocházející z Itálie. Název Cappuccino pochází ze jména řádu kapucínů, kteří nosili
