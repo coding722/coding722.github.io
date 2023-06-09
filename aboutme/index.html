@@ -6,90 +6,134 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        img{
+            width: 300px;
+            height: 300px;
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <nav>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="burger">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
+    <header id="header" style="background-image: url('https://i.pinimg.com/originals/55/66/c9/5566c94e19c5c5a7a11dd116b849023e.jpg'); background-size: cover; background-position: center; height: 100vh; display: flex; flex-direction: column; justify-content: flex-start; align-items: center;">
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: transparent;">
+            <div class="container">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#projects">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#wantweb?">Want Web?</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </nav>
-        <div class="header-content">
-            <h1>Tomko</h1>
-            <p>Front-End Developer</p>
+        <div class="header-content text-center" style="flex-grow: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+            <h1 class="text-white" style="font-family: 'Arial Black', sans-serif; font-size: 4rem; text-shadow: 2px 2px rgba(0, 0, 0, 0.4);">Tomko</h1>
+            <p class="text-white" style="margin-top: -1rem; font-size: 1.5rem; font-weight: 600; text-shadow: 2px 2px rgba(0, 0, 0, 0.4);">Front-End Developer</p>
         </div>
-    </header>
+    </header>               
+
     <main>
-        <section id="about">
+        <section id="about" class="py-5">
             <div class="container">
-                <h2>About Me</h2>
-                <p>Insert your About Me information here.</p>
+                <h2 class="text-center">About Me</h2>
                 <div class="skills">
                     <h3>Skills</h3>
-                    <ul>
-                        <li>HTML5</li>
-                        <li>CSS3</li>
-                        <li>JavaScript</li>
-                        <li>jQuery</li>
-                        <li>React</li>
+                    <ul class="list-unstyled">
+                        <li>HTML</li>
+                        <li>CSS</li>
                         <li>Bootstrap</li>
-                        <li>SASS/SCSS</li>
                     </ul>
                 </div>
             </div>
         </section>
-        <section id="projects">
-            <div class="container">
-                <h2>My Projects</h2>
-                <div class="projects-grid">
-                    <div class="project-card">
-                        <div class="project-card__image" style="background-image: url('project1.jpg')"></div>
-                        <div class="project-card__content">
-                            <h3>Project 1</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua.</p>
-                            <a href="#" class="btn-secondary">View Project</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-card__image" style="background-image: url('project2.jpg')"></div>
-                        <div class="project-card__content">
-                            <h3>Project 2</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua.</p>
-                            <a href="#" class="btn-secondary">View Project</a>
-                        </div>
-                    </div>
-                    <div class="project-card">
-                        <div class="project-card__image" style="background-image: url('project3.jpg')"></div>
-                        <div class="project-card__content">
-                            <h3>Project 3</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                ut labore et dolore magna aliqua.</p>
-                            <a href="#" class="btn-secondary">View Project</a>
-                        </div>
 
+        <section id="projects" class="py-5 bg-light">
+            <div class="container">
+                <h2 class="text-center">My Projects</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="https://hips.hearstapps.com/hmg-prod/images/golden-retriever-royalty-free-image-506756303-1560962726.jpg?crop=1.00xw:0.756xh;0,0.0756xh&resize=1200:*"
+                                class="card-img-top" alt="Dogs">
+                            <div class="card-body">
+                                <h3 class="card-title">Dogs</h3>
+                                <p class="card-text">Just a basic website where you can see the names of different dog
+                                    breeds.</p>
+                                <div class="text-center">
+                                    <a href="https://tomko1337.github.io/Pejsci/" class="btn btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/e/eb/Ash_Tree_-_geograph.org.uk_-_590710.jpg"
+                                class="card-img-top".
+                                alt="Trees">
+                            <div class="card-body">
+                                <h3 class="card-title">Trees</h3>
+                                <p class="card-text">A website showcasing different types of trees and their
+                                    characteristics.</p>
+                                <div class="text-center">
+                                    <a href="https://tomko1337.github.io/Stromy/" class="btn btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTeAXN73BqO-wT7O_9yzpoeRmEdmEVdRx6gOA&usqp=CAU"
+                                class="card-img-top" alt="Coffe">
+                            <div class="card-body">
+                                <h3 class="card-title">Coffe</h3>
+                                <p class="card-text">A website showing landing page for some coffe shop somewhere in city.</p>
+                                <div class="text-center">
+                                    <a href="https://tomko1337.github.io/Kava/" class="btn btn-primary">View Project</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section id="wantweb?" class="py-5">
+            <div class="container">
+                <h2 class="text-center">Want a Website?</h2>
+                <p>If you're looking to get a professional website for your business or personal use, feel free to
+                    contact me. I specialize in front-end development and can create modern, responsive websites that
+                    suit your needs.</p>
+                <a href="#" class="btn btn-primary">Contact Me</a>
             </div>
         </section>
+        <div class="text-center mt-3">
+            <a href="#header" >
+                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="black" class="bi bi-arrow-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 15a.5.5 0 0 0 .5-.5V2.707l3.146 3.147a.5.5 0 0 0 .708-.708l-4-4a.5.5 0 0 0-.708 0l-4 4a.5.5 0 1 0 .708.708L7.5 2.707V14.5a.5.5 0 0 0 .5.5z"/>
+                  </svg>
+            </a>
+        </div>        
     </main>
-    <footer>
-        <div class="container" style="text-align: center;">
-            <p><b>&copy; 2023 Tomko. All rights reserved.</b></p>
+
+    <footer class="py-4 bg-dark text-center">
+        <div class="container" style="color: white;">
+            <p>&copy; 2023 Tomko. Education website.</p>
         </div>
     </footer>
-    <script src="script.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
