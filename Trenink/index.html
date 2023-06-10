@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="icon" href="obr/icon.png">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #212529;
+        }
+
+        a.bestrong {
+            color: lightskyblue;
+            font-size: 18px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-left: 45%;
+            animation: heartbeat 3s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0% {
+                color: #007bff;
+                font-size: 18px;
+                transform: scale(1);
+            }
+
+            25% {
+                color: #333;
+                font-size: 18px;
+                transform: scale(1);
+            }
+
+            50% {
+                color: #007bff;
+                font-size: 16px;
+                transform: scale(1.1);
+            }
+
+            75% {
+                color: #333;
+                font-size: 18px;
+                transform: scale(1);
+            }
+
+            100% {
+                color: #007bff;
+                font-size: 18px;
+                transform: scale(1);
+            }
+        }
+
+
+
+
+        .container {
+            margin-top: 50px;
+        }
+
+        h1 {
+            color: #007bff;
+        }
+
+        .form-label {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0069d9;
+            border-color: #0062cc;
+        }
+
+        .fitness-icon {
+            font-size: 30px;
+            color: #007bff;
+        }
+
+        .fitness-text {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .fitness-image {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .fitness-image img {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .quote {
+            font-size: 16px;
+            font-style: italic;
+            margin-bottom: 5px;
+            text-align: center;
+            padding: 10px;
+            background-color: #e9ecef;
+            border-radius: 5px;
+        }
+
+        .dark-mode {
+            background-color: #212529;
+            color: #f8f9fa;
+        }
+
+        .dark-mode .form-label {
+            color: #f8f9fa;
+        }
+
+        .dark-mode .fitness-text,
+        .dark-mode .additional-info {
+            color: #f8f9fa;
+        }
+
+        .dark-mode .quote {
+            background-color: #343a40;
+        }
+    </style>
+    <title>Tréninkový plán</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">Tréninkový plán</h1>
+        <hr>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <label for="monthSelect" class="form-label">Vyberte měsíc:</label>
+                <select id="monthSelect" class="form-select">
+                    <option value="leden">Leden</option>
+                    <option value="unor">Únor</option>
+                    <option value="brezen">Březen</option>
+                    <option value="duben">Duben</option>
+                    <option value="kveten">Květen</option>
+                    <option value="cerven">Červen</option>
+                </select>
+                <button onclick="redirect()" class="btn btn-primary mt-3">Přejít</button>
+                <hr>
+                <div id="quoteContainer"></div>
+                <div class="fitness-image">
+                    <img src="https://www.icegif.com/wp-content/uploads/waterfall-icegif.gif">
+                </div>
+                <footer>
+                    <a class="bestrong">Be strong</a>
+                </footer>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function redirect() {
+            var selectedMonth = document.getElementById("monthSelect").value;
+            window.location.href = selectedMonth + ".html";
+        }
+
+        var quotes = [
+            "Pravidelné cvičení je klíčem k úspěchu.",
+            "Vyhnete se zraněním díky správné technice cvičení.",
+            "Každý malý krok směřuje k velkému výsledku.",
+            "Cvičení je investice do vašeho zdraví a štěstí.",
+            "Svou fyzickou kondici můžete změnit svět kolem sebe.",
+            "Nikdy není pozdě začít cvičit a zlepšovat se.",
+            "Svou sílu najdete ve chvílích, kdy si myslíte, že ji nemáte.",
+            "Cvičení vám dodá energii a sebedůvěru.",
+            "Cvičení není jen o fyzické síle, ale i o mentální vytrvalosti.",
+            "Každý den je novou příležitostí stát se lepší verzí sebe sama."
+        ];
+
+        function generateRandomQuote() {
+            var randomIndex = Math.floor(Math.random() * quotes.length);
+            var quote = quotes[randomIndex];
+            var quoteElement = document.createElement("p");
+            quoteElement.classList.add("quote");
+            quoteElement.textContent = quote;
+            document.getElementById("quoteContainer").appendChild(quoteElement);
+        }
+
+        generateRandomQuote();
+
+        var currentHour = new Date().getHours();
+
+        if (currentHour >= 20 || currentHour < 6) {
+            document.body.classList.add("dark-mode");
+        }
+    </script>
+</body>
+
+</html>
